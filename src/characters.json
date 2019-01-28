@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Michael Scott",
+        "image": "assets/michaelscott.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Jim",
+        "image": "assets/jim.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Pam",
+        "image": "assets/pam.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Dwight",
+        "image": "assets/dwight.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Angela",
+        "image": "assets/angela.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Stanley",
+        "image": "assets/stanley.png"
+    },
+    {
+        "id": 7,
+        "name": "Oscar",
+        "image": "assets/stanley.png"
+    },
+    {
+        "id": 8,
+        "name": "Kevin",
+        "image": "assets/kevin.png"
+    },
+    {
+        "id": 9,
+        "name": "Creed",
+        "image": "assets/creed.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Kelly",
+        "image": "assets/kelly.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Meredith",
+        "image": "assets/meredith.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Phyllis",
+        "image": "assets/phyllis.png"
+    }
+]
