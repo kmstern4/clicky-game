@@ -2,61 +2,73 @@
     {
         "id": 1,
         "name": "Michael Scott",
-        "image": "assets/michaelscott.jpg"
+        "image": "assets/michaelscott.jpg",
+        "picked": false
     },
     {
         "id": 2,
         "name": "Jim",
-        "image": "assets/jim.jpg"
+        "image": "assets/jim.jpg",
+        "picked": false
     },
     {
         "id": 3,
         "name": "Pam",
-        "image": "assets/pam.jpg"
+        "image": "assets/pam.jpg",
+        "picked": false
     },
     {
         "id": 4,
         "name": "Dwight",
-        "image": "assets/dwight.jpg"
+        "image": "assets/dwight.jpg",
+        "picked": false
     },
     {
         "id": 5,
         "name": "Angela",
-        "image": "assets/angela.jpg"
+        "image": "assets/angela.jpg",
+        "picked": false
     },
     {
         "id": 6,
         "name": "Stanley",
-        "image": "assets/stanley.png"
+        "image": "assets/stanley.png",
+        "picked": false
     },
     {
         "id": 7,
         "name": "Oscar",
-        "image": "assets/stanley.png"
+        "image": "assets/oscar.png",
+        "picked": false
     },
     {
         "id": 8,
         "name": "Kevin",
-        "image": "assets/kevin.png"
+        "image": "assets/kevin.png",
+        "picked": false
     },
     {
         "id": 9,
         "name": "Creed",
-        "image": "assets/creed.jpg"
+        "image": "assets/creed.jpg",
+        "picked": false
     },
     {
         "id": 10,
         "name": "Kelly",
-        "image": "assets/kelly.jpg"
+        "image": "assets/kelly.jpg",
+        "picked": false
     },
     {
         "id": 11,
         "name": "Meredith",
-        "image": "assets/meredith.jpg"
+        "image": "assets/meredith.jpg",
+        "picked": false
     },
     {
         "id": 12,
         "name": "Phyllis",
-        "image": "assets/phyllis.png"
+        "image": "assets/phyllis.png",
+        "picked": false
     }
 ]

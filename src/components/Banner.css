@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'American Typewriter';
+    font-style: normal;
+    font-weight: normal;
+    src: local('American Typewriter'), url('amTypewriter.woff') format('woff');
+}
+
+.banner {
+    font-family: 'American Typewriter', Fallback, serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 70px;
+    margin-bottom: 0px;
+    padding: 0px;
+}

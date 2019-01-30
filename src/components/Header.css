@@ -1,9 +1,17 @@
+@font-face {
+    font-family: 'American Typewriter';
+    font-style: normal;
+    font-weight: normal;
+    src: local('American Typewriter'), url('amTypewriter.woff') format('woff');
+}
+
 .header {
     display: inline-grid;
     grid-template-columns: 2fr 2fr 1fr 1fr;
     width: 100%;
     background: black;
     color: white;
+    font-family: 'American Typewriter', serif;
 }
 
 .center {

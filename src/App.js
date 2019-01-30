@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import characters from "./characters.json";
+import Game from "./components/Game";
+import { Container } from "./components/contain";
 
 class App extends Component {
   state = {
     score: 0,
     topScore: 0,
     headerText: "Click an image to begin!",
-    pick,
-    pickedArr: [],
-    pickedBefore: false,
-    characters
+    characters: []
+  }
+
+  componentDidMount() {
+    this.setState({
+      characters: this.shuffle(characters)
+    })
   }
 
   shuffle = array => {
@@ -20,31 +25,55 @@ class App extends Component {
       let i = Math.floor(Math.random() * counter);
       counter--;
       let temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
+      array[counter] = array[i];
+      array[i] = temp;
     }
     return array;
   }
-  
-  resetCards = () => {
-    this.setState({ characters = shuffle(characters)});
+
+  resetGame = characters => {
+    const newCharacters = characters.map(char => {
+      if (char.picked) {
+        char.picked = false
+      }
+      return char;
+    })
+    return this.shuffle(newCharacters)
   }
 
-  chooseCard = id => {
-    if (this.state.pickedArr.indexOf(id) = -1) {
-      let newPicked = this.state.pickedArr.push(id);
-      let newScore = this.state.score + 1; 
-      if (this.state.pickedBefore === true) {
-        this.setState({ pickedBefore: false })
-      }
-      this.setState({ 
-        characters = shuffle(characters),
-        pickedArr = newPicked,
-        headerText: "You guessed correctly!",
-        score: newScore
-      })
+  correctGuess = newCharacters => {
+    let newScore = this.state.score + 1
+    let newTop = Math.max(newScore, this.state.topScore);
 
-    }    
+    this.setState({
+      characters: this.shuffle(newCharacters),
+      score: newScore,
+      topScore: newTop,
+      headerText: "You guessed correctly!"
+    })
+  }
+
+  wrongGuess = newCharacters => {
+    this.setState({
+      score: 0,
+      headerText: "You guessed incorrectly!",
+      characters: this.resetGame(newCharacters)
+    })
+  }
+  
+  chooseCard = id => {
+    let guessedCorrectly = false;
+    const newCharacters = this.state.characters.map(char => {
+      if (id === char.id) {
+        if (!char.picked) {
+          char.picked = true;
+          guessedCorrectly = true;
+        }
+      }
+      return char;
+    })
+    guessedCorrectly ? this.correctGuess(newCharacters) : this.wrongGuess(newCharacters)
+
   }
 
   render() {
@@ -55,20 +84,19 @@ class App extends Component {
         headerText={this.state.headerText}
       />
       <Banner />
-      {this.state.characters.map(char => (
-        <Game 
-          id={char.id}
-          key={char.id}
-          image={char.image}
-          name={char.name}
-          resetCards = {this.resetCards}
-          pick = {this.state.pick}
-          pickedArr = {this.state.pickedArr}
-          pickedBefore = {this.state.pickedBefore}
-          headerText = {this.state.headerText}
-          chooseCard = {this.chooseCard}
-        />
-      ))}
+      <Container>
+        {this.state.characters.map(char => (
+          <Game 
+            id={char.id}
+            key={char.id}
+            image={char.image}
+            name={char.name}
+            picked={char.picked}
+            headerText={this.state.headerText}
+            chooseCard={() => this.chooseCard(char.id)}
+          />
+        ))}
+      </Container>
     </>
   }
 }
